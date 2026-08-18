@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="h-full bg-slate-100 text-slate-800 antialiased scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>项目管理系统 | 书签入口</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"Segoe UI"', 'Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            bg: '#f4f6f9',
+                            cardBg: '#ffffff',
+                            blue: '#2563eb',
+                            green: '#059669',
+                            amber: '#d97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f4f6f9;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .section-card {
+            background: #ffffff;
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.02), 0 1px 2px -1px rgba(0, 0, 0, 0.02);
+        }
+
+        .bookmark-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .bookmark-card:hover {
+            background: #ffffff;
+            border-color: #cbd5e1;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.05), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
+        }
+
+        .section-target {
+            scroll-margin-top: 5rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(0.5rem) translateX(-50%); }
+            to { opacity: 1; transform: translateY(0) translateX(-50%); }
+        }
+        .toast-show { animation: fadeIn 0.2s ease forwards; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between p-3 sm:p-6 max-w-5xl mx-auto">
+
+    <!-- Sticky Light Theme Header & Quick Navigation Bar -->
+    <header class="sticky top-2 z-40 mb-3 sm:mb-5 bg-white/90 backdrop-blur-md border border-slate-200/80 rounded-2xl px-3 sm:px-5 py-3 flex items-center justify-between shadow-sm">
+        <div class="flex items-center space-x-2.5">
+            <div class="w-8 h-8 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold text-base shadow-sm">
+                <i class="fa-solid fa-shapes text-sm"></i>
+            </div>
+            <div>
+                <h1 class="text-sm sm:text-base font-bold text-slate-800 tracking-tight flex items-center gap-1.5">
+                    项目管理系统
+                    <span class="text-xs font-normal text-slate-400 hidden sm:inline">| 书签入口</span>
+                </h1>
+            </div>
+        </div>
+
+        <!-- Scroll Nav Buttons -->
+        <nav class="flex items-center gap-1.5 sm:gap-2">
+            <button onclick="scrollToSection('section-scheme')" class="px-2.5 py-1.5 rounded-xl text-xs font-medium text-slate-600 hover:text-blue-600 hover:bg-blue-50 transition-all flex items-center space-x-1.5 border border-slate-200/60">
+                <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                <span>方案阶段</span>
+            </button>
+            <button onclick="scrollToSection('section-deal')" class="px-2.5 py-1.5 rounded-xl text-xs font-medium text-slate-600 hover:text-emerald-600 hover:bg-emerald-50 transition-all flex items-center space-x-1.5 border border-slate-200/60">
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                <span>成交阶段</span>
+            </button>
+            <button onclick="scrollToSection('section-construction')" class="px-2.5 py-1.5 rounded-xl text-xs font-medium text-slate-600 hover:text-amber-600 hover:bg-amber-50 transition-all flex items-center space-x-1.5 border border-slate-200/60">
+                <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                <span>施工阶段</span>
+            </button>
+        </nav>
+
+        <div class="hidden md:block text-xs text-slate-400 font-medium">
+            高效协同 · 简单好用
+        </div>
+    </header>
+
+    <main class="flex-1 space-y-3 sm:space-y-4">
+
+        <!-- 方案阶段与成交阶段：在移动端与桌面端均并排呈两列显示 -->
+        <div class="grid grid-cols-2 gap-2.5 sm:gap-4">
+            
+            <!-- Category 1: 方案阶段 -->
+            <section id="section-scheme" class="section-target section-card rounded-2xl p-3 sm:p-5 flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center space-x-2 mb-2.5 sm:mb-3">
+                        <div class="w-1.5 h-3.5 sm:h-4 bg-blue-600 rounded-full"></div>
+                        <i class="fa-regular fa-file-lines text-blue-600 text-xs sm:text-sm"></i>
+                        <h2 class="text-xs sm:text-base font-bold text-slate-800 tracking-tight">方案阶段</h2>
+                    </div>
+
+                    <a href="https://doc.weixin.qq.com/smartsheet/form/1_wpElvrcgAA7LLBNOpRF7WDmMWpWLiiEA_7595da" target="_blank" 
+                       class="bookmark-card rounded-xl p-2.5 sm:p-4 flex flex-col justify-between group relative h-[calc(100%-2rem)]">
+                        <div>
+                            <div class="flex items-start justify-between mb-2">
+                                <div class="w-8 h-8 sm:w-11 sm:h-11 rounded-xl bg-blue-100/70 text-blue-600 flex items-center justify-center text-sm sm:text-lg shrink-0">
+                                    <i class="fa-solid fa-file-pen"></i>
+                                </div>
+                                <div class="flex items-center space-x-1 opacity-90 sm:opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <button onclick="event.preventDefault(); event.stopPropagation(); openQr('设计方案申请表', 'https://doc.weixin.qq.com/smartsheet/form/1_wpElvrcgAA7LLBNOpRF7WDmMWpWLiiEA_7595da')" 
+                                            class="p-1 sm:p-1.5 text-slate-400 hover:text-blue-600 hover:bg-slate-100 rounded-lg text-xs transition-colors" title="手机扫码">
+                                        <i class="fa-solid fa-qrcode"></i>
+                                    </button>
+                                    <button onclick="event.preventDefault(); event.stopPropagation(); copyUrl('https://doc.weixin.qq.com/smartsheet/form/1_wpElvrcgAA7LLBNOpRF7WDmMWpWLiiEA_7595da')" 
+                                            class="p-1 sm:p-1.5 text-slate-400 hover:text-blue-600 hover:bg-slate-100 rounded-lg text-xs transition-colors" title="复制链接">
+                                        <i class="fa-regular fa-copy"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <h3 class="text-xs sm:text-base font-bold text-slate-800 leading-snug mb-1 group-hover:text-blue-600 transition-colors">
+                                设计方案申请表
+                            </h3>
+                            <p class="text-[11px] sm:text-xs text-slate-500 line-clamp-2 leading-relaxed">
+                                提交设计方案申请与相关信息
+                            </p>
+                        </div>
+                        <div class="mt-3 flex justify-end">
+                            <i class="fa-solid fa-arrow-right text-xs sm:text-sm text-slate-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all"></i>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Category 2: 成交阶段 -->
+            <section id="section-deal" class="section-target section-card rounded-2xl p-3 sm:p-5 flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center space-x-2 mb-2.5 sm:mb-3">
+                        <div class="w-1.5 h-3.5 sm:h-4 bg-emerald-600 rounded-full"></div>
+                        <i class="fa-regular fa-handshake text-emerald-600 text-xs sm:text-sm"></i>
+                        <h2 class="text-xs sm:text-base font-bold text-slate-800 tracking-tight">成交阶段</h2>
+                    </div>
+
+                    <a href="https://doc.weixin.qq.com/smartsheet/form/1_wpElvrcgAA7LLBNOpRF7WDmMWpWLiiEA_fcbf21" target="_blank" 
+                       class="bookmark-card rounded-xl p-2.5 sm:p-4 flex flex-col justify-between group relative h-[calc(100%-2rem)]">
+                        <div>
+                            <div class="flex items-start justify-between mb-2">
+                                <div class="w-8 h-8 sm:w-11 sm:h-11 rounded-xl bg-emerald-100/70 text-emerald-600 flex items-center justify-center text-sm sm:text-lg shrink-0">
+                                    <i class="fa-solid fa-file-contract"></i>
+                                </div>
+                                <div class="flex items-center space-x-1 opacity-90 sm:opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <button onclick="event.preventDefault(); event.stopPropagation(); openQr('新合同登记', 'https://doc.weixin.qq.com/smartsheet/form/1_wpElvrcgAA7LLBNOpRF7WDmMWpWLiiEA_fcbf21')" 
+                                            class="p-1 sm:p-1.5 text-slate-400 hover:text-emerald-600 hover:bg-slate-100 rounded-lg text-xs transition-colors" title="手机扫码">
+                                        <i class="fa-solid fa-qrcode"></i>
+                                    </button>
+                                    <button onclick="event.preventDefault(); event.stopPropagation(); copyUrl('https://doc.weixin.qq.com/smartsheet/form/1_wpElvrcgAA7LLBNOpRF7WDmMWpWLiiEA_fcbf21')" 
+                                            class="p-1 sm:p-1.5 text-slate-400 hover:text-emerald-600 hover:bg-slate-100 rounded-lg text-xs transition-colors" title="复制链接">
+                                        <i class="fa-regular fa-copy"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <h3 class="text-xs sm:text-base font-bold text-slate-800 leading-snug mb-1 group-hover:text-emerald-600 transition-colors">
+                                新合同登记
+                            </h3>
+                            <p class="text-[11px] sm:text-xs text-slate-500 line-clamp-2 leading-relaxed">
+                                新合同信息登记与管理
+                            </p>
+                        </div>
+                        <div class="mt-3 flex justify-end">
+                            <i class="fa-solid fa-arrow-right text-xs sm:text-sm text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all"></i>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Category 3: 项目施工阶段 (2 Items -> Displayed side-by-side in 2 columns on mobile) -->
+        <section id="section-construction" class="section-target section-card rounded-2xl p-3.5 sm:p-5">
+            <div class="flex items-center space-x-2 mb-2.5 sm:mb-3">
+                <div class="w-1.5 h-3.5 sm:h-4 bg-amber-600 rounded-full"></div>
+                <i class="fa-solid fa-helmet-safety text-amber-600 text-xs sm:text-sm"></i>
+                <h2 class="text-xs sm:text-base font-bold text-slate-800 tracking-tight">项目施工阶段</h2>
+            </div>
+
+            <!-- Mobile 2-column Grid -->
+            <div class="grid grid-cols-2 gap-2.5 sm:gap-4">
+                
+                <!-- Card 3 -->
+                <a href="https://doc.weixin.qq.com/smartsheet/form/1_wpElvrcgAA7LLBNOpRF7WDmMWpWLiiEA_fb1416" target="_blank" 
+                   class="bookmark-card rounded-xl p-2.5 sm:p-4 flex flex-col justify-between group relative">
+                    <div>
+                        <div class="flex items-start justify-between mb-2">
+                            <div class="w-8 h-8 sm:w-11 sm:h-11 rounded-xl bg-amber-100/70 text-amber-600 flex items-center justify-center text-sm sm:text-lg shrink-0">
+                                <i class="fa-solid fa-user-plus"></i>
+                            </div>
+                            <div class="flex items-center space-x-1 opacity-90 sm:opacity-0 group-hover:opacity-100 transition-opacity">
+                                <button onclick="event.preventDefault(); event.stopPropagation(); openQr('新增项目负责人信息', 'https://doc.weixin.qq.com/smartsheet/form/1_wpElvrcgAA7LLBNOpRF7WDmMWpWLiiEA_fb1416')" 
+                                        class="p-1 sm:p-1.5 text-slate-400 hover:text-amber-600 hover:bg-slate-100 rounded-lg text-xs transition-colors" title="手机扫码">
+                                    <i class="fa-solid fa-qrcode"></i>
+                                </button>
+                                <button onclick="event.preventDefault(); event.stopPropagation(); copyUrl('https://doc.weixin.qq.com/smartsheet/form/1_wpElvrcgAA7LLBNOpRF7WDmMWpWLiiEA_fb1416')" 
+                                        class="p-1 sm:p-1.5 text-slate-400 hover:text-amber-600 hover:bg-slate-100 rounded-lg text-xs transition-colors" title="复制链接">
+                                    <i class="fa-regular fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <h3 class="text-xs sm:text-base font-bold text-slate-800 leading-snug mb-1 group-hover:text-amber-600 transition-colors">
+                            新增项目负责人信息
+                        </h3>
+                        <p class="text-[11px] sm:text-xs text-slate-500 line-clamp-2 leading-relaxed">
+                            添加与维护项目负责人信息
+                        </p>
+                    </div>
+
+                    <div class="mt-3 flex justify-end">
+                        <i class="fa-solid fa-arrow-right text-xs sm:text-sm text-slate-400 group-hover:text-amber-600 group-hover:translate-x-1 transition-all"></i>
+                    </div>
+                </a>
+
+                <!-- Card 4 -->
+                <a href="https://doc.weixin.qq.com/smartsheet/form/1_wpElvrcgAA7LLBNOpRF7WDmMWpWLiiEA_a301f9" target="_blank" 
+                   class="bookmark-card rounded-xl p-2.5 sm:p-4 flex flex-col justify-between group relative">
+                    <div>
+                        <div class="flex items-start justify-between mb-2">
+                            <div class="w-8 h-8 sm:w-11 sm:h-11 rounded-xl bg-amber-100/70 text-amber-600 flex items-center justify-center text-sm sm:text-lg shrink-0">
+                                <i class="fa-solid fa-images"></i>
+                            </div>
+                            <div class="flex items-center space-x-1 opacity-90 sm:opacity-0 group-hover:opacity-100 transition-opacity">
+                                <button onclick="event.preventDefault(); event.stopPropagation(); openQr('项目现场 素材提交', 'https://doc.weixin.qq.com/smartsheet/form/1_wpElvrcgAA7LLBNOpRF7WDmMWpWLiiEA_a301f9')" 
+                                        class="p-1 sm:p-1.5 text-slate-400 hover:text-amber-600 hover:bg-slate-100 rounded-lg text-xs transition-colors" title="手机扫码">
+                                    <i class="fa-solid fa-qrcode"></i>
+                                </button>
+                                <button onclick="event.preventDefault(); event.stopPropagation(); copyUrl('https://doc.weixin.qq.com/smartsheet/form/1_wpElvrcgAA7LLBNOpRF7WDmMWpWLiiEA_a301f9')" 
+                                        class="p-1 sm:p-1.5 text-slate-400 hover:text-amber-600 hover:bg-slate-100 rounded-lg text-xs transition-colors" title="复制链接">
+                                    <i class="fa-regular fa-copy"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <h3 class="text-xs sm:text-base font-bold text-slate-800 leading-snug mb-1 group-hover:text-amber-600 transition-colors">
+                            项目现场 素材提交
+                        </h3>
+                        <p class="text-[11px] sm:text-xs text-slate-500 line-clamp-2 leading-relaxed">
+                            提交项目现场照片与相关素材
+                        </p>
+                    </div>
+
+                    <div class="mt-3 flex justify-end">
+                        <i class="fa-solid fa-arrow-right text-xs sm:text-sm text-slate-400 group-hover:text-amber-600 group-hover:translate-x-1 transition-all"></i>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- QR Code Modal (Light Theme) -->
+    <div id="qrModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-xs opacity-0 pointer-events-none transition-opacity duration-200">
+        <div class="bg-white rounded-2xl p-6 max-w-xs w-full border border-slate-200 text-center shadow-xl">
+            <div class="flex items-center justify-between mb-4 pb-2 border-b border-slate-100">
+                <h3 id="modalTitle" class="text-sm font-bold text-slate-800 truncate">扫码填写表单</h3>
+                <button onclick="closeQr()" class="text-slate-400 hover:text-slate-600 p-1">
+                    <i class="fa-solid fa-xmark text-base"></i>
+                </button>
+            </div>
+            
+            <div class="bg-slate-50 p-3.5 rounded-xl inline-block my-1 border border-slate-100">
+                <div id="qrcode" class="flex justify-center"></div>
+            </div>
+
+            <p class="text-xs text-slate-400 mt-3">支持微信或手机浏览器直接扫码访问</p>
+            
+            <button onclick="closeQr()" class="w-full mt-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-medium transition-colors">
+                关闭
+            </button>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden">
+        <div class="bg-slate-900 text-white text-xs px-4 py-2.5 rounded-full shadow-lg flex items-center space-x-2">
+            <i class="fa-solid fa-circle-check text-emerald-400"></i>
+            <span id="toastMsg">已成功复制链接</span>
+        </div>
+    </div>
+
+    <!-- Minimal Light Footer -->
+    <footer class="py-4 text-center text-xs text-slate-400 border-t border-slate-200/60 mt-6 flex items-center justify-center space-x-1">
+        <i class="fa-regular fa-shield-check text-slate-400"></i>
+        <span>© 2024 项目管理系统 · 让项目管理更高效</span>
+    </footer>
+
+    <script>
+        // Smooth scroll function
+        function scrollToSection(id) {
+            const el = document.getElementById(id);
+            if (el) {
+                el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // Copy link logic
+        function copyUrl(text) {
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text).then(() => showToast("已复制表单链接"));
+            } else {
+                const area = document.createElement("textarea");
+                area.value = text;
+                area.style.position = "fixed";
+                area.style.left = "-9999px";
+                document.body.appendChild(area);
+                area.select();
+                try {
+                    document.execCommand('copy');
+                    showToast("已复制表单链接");
+                } catch (e) {
+                    showToast("复制失败");
+                }
+                document.body.removeChild(area);
+            }
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMsg').innerText = msg;
+            toast.classList.remove('hidden');
+            toast.classList.add('toast-show');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+                toast.classList.remove('toast-show');
+            }, 2000);
+        }
+
+        // QR Code Modal logic
+        function openQr(title, url) {
+            document.getElementById('modalTitle').innerText = title;
+            const container = document.getElementById('qrcode');
+            container.innerHTML = '';
+            
+            new QRCode(container, {
+                text: url,
+                width: 140,
+                height: 140,
+                colorDark : "#1e293b",
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.M
+            });
+
+            const modal = document.getElementById('qrModal');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+        }
+
+        function closeQr() {
+            const modal = document.getElementById('qrModal');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        document.getElementById('qrModal').addEventListener('click', function(e) {
+            if (e.target === this) closeQr();
+        });
+    </script>
+</body>
+</html>
