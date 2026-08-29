@@ -1,19 +1,28 @@
+```html
 <!DOCTYPE html>
 <html lang="zh-CN" class="h-full bg-slate-100 text-slate-800 antialiased scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>项目管理系统 | 书签入口</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"Segoe UI"', 'Roboto', 'sans-serif'],
+                        sans: [
+                            '-apple-system',
+                            'BlinkMacSystemFont',
+                            '"SF Pro Display"',
+                            '"Segoe UI"',
+                            'Roboto',
+                            'sans-serif'
+                        ],
                     },
                     colors: {
                         brand: {
@@ -28,6 +37,7 @@
             }
         }
     </script>
+
     <style>
         body {
             background-color: #f4f6f9;
@@ -37,7 +47,9 @@
         .section-card {
             background: #ffffff;
             border: 1px solid rgba(226, 232, 240, 0.8);
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.02), 0 1px 2px -1px rgba(0, 0, 0, 0.02);
+            box-shadow:
+                0 1px 3px 0 rgba(0, 0, 0, 0.02),
+                0 1px 2px -1px rgba(0, 0, 0, 0.02);
         }
 
         .bookmark-card {
@@ -50,7 +62,9 @@
             background: #ffffff;
             border-color: #cbd5e1;
             transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.05), 0 4px 6px -4px rgba(15, 23, 42, 0.03);
+            box-shadow:
+                0 10px 15px -3px rgba(15, 23, 42, 0.05),
+                0 4px 6px -4px rgba(15, 23, 42, 0.03);
         }
 
         .section-target {
@@ -58,50 +72,81 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(0.5rem) translateX(-50%); }
-            to { opacity: 1; transform: translateY(0) translateX(-50%); }
+            from {
+                opacity: 0;
+                transform: translateY(0.5rem) translateX(-50%);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) translateX(-50%);
+            }
         }
-        .toast-show { animation: fadeIn 0.2s ease forwards; }
+
+        .toast-show {
+            animation: fadeIn 0.2s ease forwards;
+        }
     </style>
 </head>
+
 <body class="min-h-screen flex flex-col justify-between p-3 sm:p-6 max-w-5xl mx-auto">
 
     <main class="flex-1 space-y-3 sm:space-y-4">
 
+        <!-- =========================================================
+             Category 3: 项目现场 素材收集
+             ========================================================= -->
+        <section id="section-construction"
+                 class="section-target section-card rounded-2xl p-3.5 sm:p-5">
 
-        <!-- Category 3: 项目施工阶段 (2 Items -> Displayed side-by-side in 2 columns on mobile) -->
-        <section id="section-construction" class="section-target section-card rounded-2xl p-3.5 sm:p-5">
             <div class="flex items-center space-x-2 mb-2.5 sm:mb-3">
                 <div class="w-1.5 h-3.5 sm:h-4 bg-amber-600 rounded-full"></div>
                 <i class="fa-solid fa-helmet-safety text-amber-600 text-xs sm:text-sm"></i>
-                <h2 class="text-xs sm:text-base font-bold text-slate-800 tracking-tight">项目现场 素材收集</h2>
+
+                <h2 class="text-xs sm:text-base font-bold text-slate-800 tracking-tight">
+                    项目现场 素材收集
+                </h2>
             </div>
 
             <!-- Mobile 2-column Grid -->
             <div class="grid grid-cols-2 gap-2.5 sm:gap-4">
-                
+
                 <!-- Card 3 -->
-                <a href="https://doc.weixin.qq.com/smartsheet/form/1_wpElvrcgAA7LLBNOpRF7WDmMWpWLiiEA_fb1416" target="_blank" 
+                <a href="https://doc.weixin.qq.com/smartsheet/form/1_wpElvrcgAA7LLBNOpRF7WDmMWpWLiiEA_fb1416"
+                   target="_blank"
                    class="bookmark-card rounded-xl p-2.5 sm:p-4 flex flex-col justify-between group relative">
+
                     <div>
                         <div class="flex items-start justify-between mb-2">
+
                             <div class="w-8 h-8 sm:w-11 sm:h-11 rounded-xl bg-amber-100/70 text-amber-600 flex items-center justify-center text-sm sm:text-lg shrink-0">
                                 <i class="fa-solid fa-user-plus"></i>
                             </div>
+
                             <div class="flex items-center space-x-1 opacity-90 sm:opacity-0 group-hover:opacity-100 transition-opacity">
-                                <button onclick="event.preventDefault(); event.stopPropagation(); openQr('新增项目负责人信息', 'https://doc.weixin.qq.com/smartsheet/form/1_wpElvrcgAA7LLBNOpRF7WDmMWpWLiiEA_fb1416')" 
-                                        class="p-1 sm:p-1.5 text-slate-400 hover:text-amber-600 hover:bg-slate-100 rounded-lg text-xs transition-colors" title="手机扫码">
+
+                                <button
+                                    onclick="event.preventDefault(); event.stopPropagation(); openQr('新增项目负责人信息', 'https://doc.weixin.qq.com/smartsheet/form/1_wpElvrcgAA7LLBNOpRF7WDmMWpWLiiEA_fb1416')"
+                                    class="p-1 sm:p-1.5 text-slate-400 hover:text-amber-600 hover:bg-slate-100 rounded-lg text-xs transition-colors"
+                                    title="手机扫码">
+
                                     <i class="fa-solid fa-qrcode"></i>
                                 </button>
-                                <button onclick="event.preventDefault(); event.stopPropagation(); copyUrl('https://doc.weixin.qq.com/smartsheet/form/1_wpElvrcgAA7LLBNOpRF7WDmMWpWLiiEA_fb1416')" 
-                                        class="p-1 sm:p-1.5 text-slate-400 hover:text-amber-600 hover:bg-slate-100 rounded-lg text-xs transition-colors" title="复制链接">
+
+                                <button
+                                    onclick="event.preventDefault(); event.stopPropagation(); copyUrl('https://doc.weixin.qq.com/smartsheet/form/1_wpElvrcgAA7LLBNOpRF7WDmMWpWLiiEA_fb1416')"
+                                    class="p-1 sm:p-1.5 text-slate-400 hover:text-amber-600 hover:bg-slate-100 rounded-lg text-xs transition-colors"
+                                    title="复制链接">
+
                                     <i class="fa-regular fa-copy"></i>
                                 </button>
+
                             </div>
                         </div>
+
                         <h3 class="text-xs sm:text-base font-bold text-slate-800 leading-snug mb-1 group-hover:text-amber-600 transition-colors">
                             新增项目负责人信息
                         </h3>
+
                         <p class="text-[11px] sm:text-xs text-slate-500 line-clamp-2 leading-relaxed">
                             入场新项目时，提交一次即可
                         </p>
@@ -112,28 +157,44 @@
                     </div>
                 </a>
 
+
                 <!-- Card 4 -->
-                <a href="https://doc.weixin.qq.com/smartsheet/form/1_wpElvrcgAA7LLBNOpRF7WDmMWpWLiiEA_a301f9" target="_blank" 
+                <a href="https://doc.weixin.qq.com/smartsheet/form/1_wpElvrcgAA7LLBNOpRF7WDmMWpWLiiEA_a301f9"
+                   target="_blank"
                    class="bookmark-card rounded-xl p-2.5 sm:p-4 flex flex-col justify-between group relative">
+
                     <div>
                         <div class="flex items-start justify-between mb-2">
+
                             <div class="w-8 h-8 sm:w-11 sm:h-11 rounded-xl bg-amber-100/70 text-amber-600 flex items-center justify-center text-sm sm:text-lg shrink-0">
                                 <i class="fa-solid fa-images"></i>
                             </div>
+
                             <div class="flex items-center space-x-1 opacity-90 sm:opacity-0 group-hover:opacity-100 transition-opacity">
-                                <button onclick="event.preventDefault(); event.stopPropagation(); openQr('项目现场 素材提交', 'https://doc.weixin.qq.com/smartsheet/form/1_wpElvrcgAA7LLBNOpRF7WDmMWpWLiiEA_a301f9')" 
-                                        class="p-1 sm:p-1.5 text-slate-400 hover:text-amber-600 hover:bg-slate-100 rounded-lg text-xs transition-colors" title="手机扫码">
+
+                                <button
+                                    onclick="event.preventDefault(); event.stopPropagation(); openQr('项目现场 素材提交', 'https://doc.weixin.qq.com/smartsheet/form/1_wpElvrcgAA7LLBNOpRF7WDmMWpWLiiEA_a301f9')"
+                                    class="p-1 sm:p-1.5 text-slate-400 hover:text-amber-600 hover:bg-slate-100 rounded-lg text-xs transition-colors"
+                                    title="手机扫码">
+
                                     <i class="fa-solid fa-qrcode"></i>
                                 </button>
-                                <button onclick="event.preventDefault(); event.stopPropagation(); copyUrl('https://doc.weixin.qq.com/smartsheet/form/1_wpElvrcgAA7LLBNOpRF7WDmMWpWLiiEA_a301f9')" 
-                                        class="p-1 sm:p-1.5 text-slate-400 hover:text-amber-600 hover:bg-slate-100 rounded-lg text-xs transition-colors" title="复制链接">
+
+                                <button
+                                    onclick="event.preventDefault(); event.stopPropagation(); copyUrl('https://doc.weixin.qq.com/smartsheet/form/1_wpElvrcgAA7LLBNOpRF7WDmMWpWLiiEA_a301f9')"
+                                    class="p-1 sm:p-1.5 text-slate-400 hover:text-amber-600 hover:bg-slate-100 rounded-lg text-xs transition-colors"
+                                    title="复制链接">
+
                                     <i class="fa-regular fa-copy"></i>
                                 </button>
+
                             </div>
                         </div>
+
                         <h3 class="text-xs sm:text-base font-bold text-slate-800 leading-snug mb-1 group-hover:text-amber-600 transition-colors">
                             日常素材提交
                         </h3>
+
                         <p class="text-[11px] sm:text-xs text-slate-500 line-clamp-2 leading-relaxed">
                             同一项目，可分多次提交项目照片/视频
                         </p>
@@ -142,6 +203,406 @@
                     <div class="mt-3 flex justify-end">
                         <i class="fa-solid fa-arrow-right text-xs sm:text-sm text-slate-400 group-hover:text-amber-600 group-hover:translate-x-1 transition-all"></i>
                     </div>
+
+                </a>
+
+            </div>
+        </section>
+
+
+        <!-- =========================================================
+             Category 4: 搜集情况 实时查看
+             排序：
+             冯杰
+             郝林勇
+             李启元
+             李帆
+             连业顺
+             任志恒
+             王海洲
+             王皓
+             魏振宇
+             薛献存
+             徐翔宇
+             张梅哲
+             张小瑜
+             张新伟
+             张裕
+             朱冠企
+             ========================================================= -->
+        <section id="section-dashboard"
+                 class="section-target section-card rounded-2xl p-3.5 sm:p-5">
+
+            <div class="flex items-center space-x-2 mb-2.5 sm:mb-3">
+
+                <div class="w-1.5 h-3.5 sm:h-4 bg-emerald-600 rounded-full"></div>
+
+                <i class="fa-solid fa-chart-line text-emerald-600 text-xs sm:text-sm"></i>
+
+                <h2 class="text-xs sm:text-base font-bold text-slate-800 tracking-tight">
+                    搜集情况 实时查看
+                </h2>
+
+            </div>
+
+
+            <!--
+                手机：2列
+                平板：3列
+                桌面：4列
+            -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2.5 sm:gap-4">
+
+
+                <!-- 01 冯杰 -->
+                <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_rsAWG6&viewId=vukaF8"
+                   target="_blank"
+                   class="bookmark-card rounded-xl p-3 sm:p-4 flex items-center justify-between group">
+
+                    <div class="flex items-center space-x-2.5">
+
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-emerald-100/70 text-emerald-600 flex items-center justify-center text-sm sm:text-base shrink-0">
+                            <i class="fa-solid fa-chart-column"></i>
+                        </div>
+
+                        <span class="text-xs sm:text-sm font-bold text-slate-700 group-hover:text-emerald-600 transition-colors">
+                            冯杰
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right text-xs text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all"></i>
+
+                </a>
+
+
+                <!-- 02 郝林勇 -->
+                <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_C90gvW&viewId=vukaF8"
+                   target="_blank"
+                   class="bookmark-card rounded-xl p-3 sm:p-4 flex items-center justify-between group">
+
+                    <div class="flex items-center space-x-2.5">
+
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-emerald-100/70 text-emerald-600 flex items-center justify-center text-sm sm:text-base shrink-0">
+                            <i class="fa-solid fa-chart-column"></i>
+                        </div>
+
+                        <span class="text-xs sm:text-sm font-bold text-slate-700 group-hover:text-emerald-600 transition-colors">
+                            郝林勇
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right text-xs text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all"></i>
+
+                </a>
+
+
+                <!-- 03 李启元 -->
+                <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_9IQxjQ&viewId=vukaF8"
+                   target="_blank"
+                   class="bookmark-card rounded-xl p-3 sm:p-4 flex items-center justify-between group">
+
+                    <div class="flex items-center space-x-2.5">
+
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-emerald-100/70 text-emerald-600 flex items-center justify-center text-sm sm:text-base shrink-0">
+                            <i class="fa-solid fa-chart-column"></i>
+                        </div>
+
+                        <span class="text-xs sm:text-sm font-bold text-slate-700 group-hover:text-emerald-600 transition-colors">
+                            李启元
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right text-xs text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all"></i>
+
+                </a>
+
+
+                <!-- 04 李帆 -->
+                <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_DI0ofC&viewId=vukaF8"
+                   target="_blank"
+                   class="bookmark-card rounded-xl p-3 sm:p-4 flex items-center justify-between group">
+
+                    <div class="flex items-center space-x-2.5">
+
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-emerald-100/70 text-emerald-600 flex items-center justify-center text-sm sm:text-base shrink-0">
+                            <i class="fa-solid fa-chart-column"></i>
+                        </div>
+
+                        <span class="text-xs sm:text-sm font-bold text-slate-700 group-hover:text-emerald-600 transition-colors">
+                            李帆
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right text-xs text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all"></i>
+
+                </a>
+
+
+                <!-- 05 连业顺 -->
+                <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_Sxddmr&viewId=vukaF8"
+                   target="_blank"
+                   class="bookmark-card rounded-xl p-3 sm:p-4 flex items-center justify-between group">
+
+                    <div class="flex items-center space-x-2.5">
+
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-emerald-100/70 text-emerald-600 flex items-center justify-center text-sm sm:text-base shrink-0">
+                            <i class="fa-solid fa-chart-column"></i>
+                        </div>
+
+                        <span class="text-xs sm:text-sm font-bold text-slate-700 group-hover:text-emerald-600 transition-colors">
+                            连业顺
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right text-xs text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all"></i>
+
+                </a>
+
+
+                <!-- 06 任志恒 -->
+                <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_L9Phd0&viewId=vukaF8"
+                   target="_blank"
+                   class="bookmark-card rounded-xl p-3 sm:p-4 flex items-center justify-between group">
+
+                    <div class="flex items-center space-x-2.5">
+
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-emerald-100/70 text-emerald-600 flex items-center justify-center text-sm sm:text-base shrink-0">
+                            <i class="fa-solid fa-chart-column"></i>
+                        </div>
+
+                        <span class="text-xs sm:text-sm font-bold text-slate-700 group-hover:text-emerald-600 transition-colors">
+                            任志恒
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right text-xs text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all"></i>
+
+                </a>
+
+
+                <!-- 07 王海洲 -->
+                <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_zQKiQI&viewId=vukaF8"
+                   target="_blank"
+                   class="bookmark-card rounded-xl p-3 sm:p-4 flex items-center justify-between group">
+
+                    <div class="flex items-center space-x-2.5">
+
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-emerald-100/70 text-emerald-600 flex items-center justify-center text-sm sm:text-base shrink-0">
+                            <i class="fa-solid fa-chart-column"></i>
+                        </div>
+
+                        <span class="text-xs sm:text-sm font-bold text-slate-700 group-hover:text-emerald-600 transition-colors">
+                            王海洲
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right text-xs text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all"></i>
+
+                </a>
+
+
+                <!-- 08 王皓 -->
+                <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_dnOFEJ&viewId=vukaF8"
+                   target="_blank"
+                   class="bookmark-card rounded-xl p-3 sm:p-4 flex items-center justify-between group">
+
+                    <div class="flex items-center space-x-2.5">
+
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-emerald-100/70 text-emerald-600 flex items-center justify-center text-sm sm:text-base shrink-0">
+                            <i class="fa-solid fa-chart-column"></i>
+                        </div>
+
+                        <span class="text-xs sm:text-sm font-bold text-slate-700 group-hover:text-emerald-600 transition-colors">
+                            王皓
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right text-xs text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all"></i>
+
+                </a>
+
+
+                <!-- 09 魏振宇 -->
+                <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_gT4Dt9&viewId=vukaF8"
+                   target="_blank"
+                   class="bookmark-card rounded-xl p-3 sm:p-4 flex items-center justify-between group">
+
+                    <div class="flex items-center space-x-2.5">
+
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-emerald-100/70 text-emerald-600 flex items-center justify-center text-sm sm:text-base shrink-0">
+                            <i class="fa-solid fa-chart-column"></i>
+                        </div>
+
+                        <span class="text-xs sm:text-sm font-bold text-slate-700 group-hover:text-emerald-600 transition-colors">
+                            魏振宇
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right text-xs text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all"></i>
+
+                </a>
+
+
+                <!-- 10 薛献存 -->
+                <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_p5PX8G&viewId=vukaF8"
+                   target="_blank"
+                   class="bookmark-card rounded-xl p-3 sm:p-4 flex items-center justify-between group">
+
+                    <div class="flex items-center space-x-2.5">
+
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-emerald-100/70 text-emerald-600 flex items-center justify-center text-sm sm:text-base shrink-0">
+                            <i class="fa-solid fa-chart-column"></i>
+                        </div>
+
+                        <span class="text-xs sm:text-sm font-bold text-slate-700 group-hover:text-emerald-600 transition-colors">
+                            薛献存
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right text-xs text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all"></i>
+
+                </a>
+
+
+                <!-- 11 徐翔宇 -->
+                <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_SQTkTJ&viewId=vukaF8"
+                   target="_blank"
+                   class="bookmark-card rounded-xl p-3 sm:p-4 flex items-center justify-between group">
+
+                    <div class="flex items-center space-x-2.5">
+
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-emerald-100/70 text-emerald-600 flex items-center justify-center text-sm sm:text-base shrink-0">
+                            <i class="fa-solid fa-chart-column"></i>
+                        </div>
+
+                        <span class="text-xs sm:text-sm font-bold text-slate-700 group-hover:text-emerald-600 transition-colors">
+                            徐翔宇
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right text-xs text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all"></i>
+
+                </a>
+
+
+                <!-- 12 张梅哲 -->
+                <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_6o4Dd6&viewId=vukaF8"
+                   target="_blank"
+                   class="bookmark-card rounded-xl p-3 sm:p-4 flex items-center justify-between group">
+
+                    <div class="flex items-center space-x-2.5">
+
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-emerald-100/70 text-emerald-600 flex items-center justify-center text-sm sm:text-base shrink-0">
+                            <i class="fa-solid fa-chart-column"></i>
+                        </div>
+
+                        <span class="text-xs sm:text-sm font-bold text-slate-700 group-hover:text-emerald-600 transition-colors">
+                            张梅哲
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right text-xs text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all"></i>
+
+                </a>
+
+
+                <!-- 13 张小瑜 -->
+                <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_0RLpUi&viewId=vukaF8"
+                   target="_blank"
+                   class="bookmark-card rounded-xl p-3 sm:p-4 flex items-center justify-between group">
+
+                    <div class="flex items-center space-x-2.5">
+
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-emerald-100/70 text-emerald-600 flex items-center justify-center text-sm sm:text-base shrink-0">
+                            <i class="fa-solid fa-chart-column"></i>
+                        </div>
+
+                        <span class="text-xs sm:text-sm font-bold text-slate-700 group-hover:text-emerald-600 transition-colors">
+                            张小瑜
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right text-xs text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all"></i>
+
+                </a>
+
+
+                <!-- 14 张新伟 -->
+                <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_0MQr5t&viewId=vukaF89"
+                   target="_blank"
+                   class="bookmark-card rounded-xl p-3 sm:p-4 flex items-center justify-between group">
+
+                    <div class="flex items-center space-x-2.5">
+
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-emerald-100/70 text-emerald-600 flex items-center justify-center text-sm sm:text-base shrink-0">
+                            <i class="fa-solid fa-chart-column"></i>
+                        </div>
+
+                        <span class="text-xs sm:text-sm font-bold text-slate-700 group-hover:text-emerald-600 transition-colors">
+                            张新伟
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right text-xs text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all"></i>
+
+                </a>
+
+
+                <!-- 15 张裕 -->
+                <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_b3nUB9&viewId=vukaF8"
+                   target="_blank"
+                   class="bookmark-card rounded-xl p-3 sm:p-4 flex items-center justify-between group">
+
+                    <div class="flex items-center space-x-2.5">
+
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-emerald-100/70 text-emerald-600 flex items-center justify-center text-sm sm:text-base shrink-0">
+                            <i class="fa-solid fa-chart-column"></i>
+                        </div>
+
+                        <span class="text-xs sm:text-sm font-bold text-slate-700 group-hover:text-emerald-600 transition-colors">
+                            张裕
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right text-xs text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all"></i>
+
+                </a>
+
+
+                <!-- 16 朱冠企 -->
+                <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_Zsrqsy&viewId=vukaF8"
+                   target="_blank"
+                   class="bookmark-card rounded-xl p-3 sm:p-4 flex items-center justify-between group">
+
+                    <div class="flex items-center space-x-2.5">
+
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-emerald-100/70 text-emerald-600 flex items-center justify-center text-sm sm:text-base shrink-0">
+                            <i class="fa-solid fa-chart-column"></i>
+                        </div>
+
+                        <span class="text-xs sm:text-sm font-bold text-slate-700 group-hover:text-emerald-600 transition-colors">
+                            朱冠企
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right text-xs text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all"></i>
+
                 </a>
 
             </div>
@@ -149,110 +610,237 @@
 
     </main>
 
-    <!-- QR Code Modal (Light Theme) -->
-    <div id="qrModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-xs opacity-0 pointer-events-none transition-opacity duration-200">
+
+    <!-- =========================================================
+         QR Code Modal
+         ========================================================= -->
+    <div id="qrModal"
+         class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-xs opacity-0 pointer-events-none transition-opacity duration-200">
+
         <div class="bg-white rounded-2xl p-6 max-w-xs w-full border border-slate-200 text-center shadow-xl">
+
             <div class="flex items-center justify-between mb-4 pb-2 border-b border-slate-100">
-                <h3 id="modalTitle" class="text-sm font-bold text-slate-800 truncate">扫码填写表单</h3>
-                <button onclick="closeQr()" class="text-slate-400 hover:text-slate-600 p-1">
+
+                <h3 id="modalTitle"
+                    class="text-sm font-bold text-slate-800 truncate">
+                    扫码填写表单
+                </h3>
+
+                <button onclick="closeQr()"
+                        class="text-slate-400 hover:text-slate-600 p-1">
+
                     <i class="fa-solid fa-xmark text-base"></i>
+
                 </button>
+
             </div>
-            
+
+
             <div class="bg-slate-50 p-3.5 rounded-xl inline-block my-1 border border-slate-100">
-                <div id="qrcode" class="flex justify-center"></div>
+
+                <div id="qrcode"
+                     class="flex justify-center">
+                </div>
+
             </div>
 
-            <p class="text-xs text-slate-400 mt-3">支持微信或手机浏览器直接扫码访问</p>
-            
-            <button onclick="closeQr()" class="w-full mt-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-medium transition-colors">
+
+            <p class="text-xs text-slate-400 mt-3">
+                支持微信或手机浏览器直接扫码访问
+            </p>
+
+
+            <button onclick="closeQr()"
+                    class="w-full mt-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-medium transition-colors">
+
                 关闭
+
             </button>
+
         </div>
+
     </div>
 
-    <!-- Notification Toast -->
-    <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden">
+
+    <!-- =========================================================
+         Notification Toast
+         ========================================================= -->
+    <div id="toast"
+         class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden">
+
         <div class="bg-slate-900 text-white text-xs px-4 py-2.5 rounded-full shadow-lg flex items-center space-x-2">
+
             <i class="fa-solid fa-circle-check text-emerald-400"></i>
-            <span id="toastMsg">已成功复制链接</span>
+
+            <span id="toastMsg">
+                已成功复制链接
+            </span>
+
         </div>
+
     </div>
 
-    <!-- Minimal Light Footer -->
+
+    <!-- =========================================================
+         Footer
+         ========================================================= -->
     <footer class="py-4 text-center text-xs text-slate-400 border-t border-slate-200/60 mt-6 flex items-center justify-center space-x-1">
+
         <i class="fa-regular fa-shield-check text-slate-400"></i>
-        <span>© 2024 项目管理系统 · 让项目管理更高效</span>
+
+        <span>
+            © 2024 项目管理系统 · 让项目管理更高效
+        </span>
+
     </footer>
 
+
+    <!-- =========================================================
+         JavaScript
+         ========================================================= -->
     <script>
+
         // Smooth scroll function
         function scrollToSection(id) {
+
             const el = document.getElementById(id);
+
             if (el) {
-                el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+                el.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+
             }
+
         }
+
 
         // Copy link logic
         function copyUrl(text) {
+
             if (navigator.clipboard && window.isSecureContext) {
-                navigator.clipboard.writeText(text).then(() => showToast("已复制表单链接"));
+
+                navigator.clipboard.writeText(text)
+                    .then(() => showToast("已复制表单链接"));
+
             } else {
+
                 const area = document.createElement("textarea");
+
                 area.value = text;
+
                 area.style.position = "fixed";
                 area.style.left = "-9999px";
+
                 document.body.appendChild(area);
+
                 area.select();
+
                 try {
+
                     document.execCommand('copy');
+
                     showToast("已复制表单链接");
+
                 } catch (e) {
+
                     showToast("复制失败");
+
                 }
+
                 document.body.removeChild(area);
+
             }
+
         }
 
+
+        // Toast notification
         function showToast(msg) {
+
             const toast = document.getElementById('toast');
+
             document.getElementById('toastMsg').innerText = msg;
+
             toast.classList.remove('hidden');
+
             toast.classList.add('toast-show');
+
             setTimeout(() => {
+
                 toast.classList.add('hidden');
+
                 toast.classList.remove('toast-show');
+
             }, 2000);
+
         }
 
-        // QR Code Modal logic
+
+        // QR Code Modal
         function openQr(title, url) {
+
             document.getElementById('modalTitle').innerText = title;
+
             const container = document.getElementById('qrcode');
+
             container.innerHTML = '';
-            
+
             new QRCode(container, {
+
                 text: url,
+
                 width: 140,
+
                 height: 140,
-                colorDark : "#1e293b",
-                colorLight : "#ffffff",
-                correctLevel : QRCode.CorrectLevel.M
+
+                colorDark: "#1e293b",
+
+                colorLight: "#ffffff",
+
+                correctLevel: QRCode.CorrectLevel.M
+
             });
 
             const modal = document.getElementById('qrModal');
-            modal.classList.remove('opacity-0', 'pointer-events-none');
+
+            modal.classList.remove(
+                'opacity-0',
+                'pointer-events-none'
+            );
+
         }
 
+
+        // Close QR Code Modal
         function closeQr() {
+
             const modal = document.getElementById('qrModal');
-            modal.classList.add('opacity-0', 'pointer-events-none');
+
+            modal.classList.add(
+                'opacity-0',
+                'pointer-events-none'
+            );
+
         }
 
-        document.getElementById('qrModal').addEventListener('click', function(e) {
-            if (e.target === this) closeQr();
-        });
+
+        // Click outside modal to close
+        document.getElementById('qrModal')
+            .addEventListener('click', function(e) {
+
+                if (e.target === this) {
+
+                    closeQr();
+
+                }
+
+            });
+
     </script>
+
 </body>
 </html>
+```
