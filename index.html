@@ -230,383 +230,260 @@
              张裕
              朱冠企
              ========================================================= -->
-        <section id="section-dashboard"
-                 class="section-target section-card rounded-2xl p-3.5 sm:p-5">
+```html
+<!-- =========================================================
+     Category 4: 搜集情况 实时查看
+     手机：3列
+     平板：4列
+     桌面：6列
+     ========================================================= -->
+<section id="section-dashboard"
+         class="section-target section-card rounded-2xl p-3 sm:p-4">
 
-            <div class="flex items-center space-x-2 mb-2.5 sm:mb-3">
+    <div class="flex items-center space-x-2 mb-2.5">
 
-                <div class="w-1.5 h-3.5 sm:h-4 bg-emerald-600 rounded-full"></div>
+        <div class="w-1.5 h-3.5 bg-emerald-600 rounded-full"></div>
 
-                <i class="fa-solid fa-chart-line text-emerald-600 text-xs sm:text-sm"></i>
+        <i class="fa-solid fa-chart-line text-emerald-600 text-xs"></i>
 
-                <h2 class="text-xs sm:text-base font-bold text-slate-800 tracking-tight">
-                    搜集情况 实时查看
-                </h2>
+        <h2 class="text-xs sm:text-sm font-bold text-slate-800 tracking-tight">
+            搜集情况 实时查看
+        </h2>
 
-            </div>
+    </div>
 
 
-            <!--
-                手机：2列
-                平板：3列
-                桌面：4列
-            -->
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2.5 sm:gap-4">
+    <!-- 人员按钮 -->
+    <div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-1.5 sm:gap-2.5">
 
 
-                <!-- 01 冯杰 -->
-                <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_rsAWG6&viewId=vukaF8"
-                   target="_blank"
-                   class="bookmark-card rounded-xl p-3 sm:p-4 flex items-center justify-between group">
+        <!-- 冯杰 -->
+        <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_rsAWG6&viewId=vukaF8"
+           target="_blank"
+           class="bookmark-card rounded-lg px-2 py-2 sm:px-2.5 sm:py-2.5 flex items-center justify-between group">
 
-                    <div class="flex items-center space-x-2.5">
+            <span class="text-[11px] sm:text-xs font-medium text-slate-700 group-hover:text-emerald-600 transition-colors truncate">
+                冯杰
+            </span>
 
-                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-emerald-100/70 text-emerald-600 flex items-center justify-center text-sm sm:text-base shrink-0">
-                            <i class="fa-solid fa-chart-column"></i>
-                        </div>
+            <i class="fa-solid fa-arrow-right text-[9px] sm:text-[10px] text-slate-400 ml-1 shrink-0 group-hover:text-emerald-600 group-hover:translate-x-0.5 transition-all"></i>
 
-                        <span class="text-xs sm:text-sm font-bold text-slate-700 group-hover:text-emerald-600 transition-colors">
-                            冯杰
-                        </span>
+        </a>
 
-                    </div>
 
-                    <i class="fa-solid fa-arrow-right text-xs text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all"></i>
+        <!-- 郝林勇 -->
+        <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_C90gvW&viewId=vukaF8"
+           target="_blank"
+           class="bookmark-card rounded-lg px-2 py-2 sm:px-2.5 sm:py-2.5 flex items-center justify-between group">
 
-                </a>
+            <span class="text-[11px] sm:text-xs font-medium text-slate-700 group-hover:text-emerald-600 transition-colors truncate">
+                郝林勇
+            </span>
 
+            <i class="fa-solid fa-arrow-right text-[9px] sm:text-[10px] text-slate-400 ml-1 shrink-0 group-hover:text-emerald-600 group-hover:translate-x-0.5 transition-all"></i>
 
-                <!-- 02 郝林勇 -->
-                <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_C90gvW&viewId=vukaF8"
-                   target="_blank"
-                   class="bookmark-card rounded-xl p-3 sm:p-4 flex items-center justify-between group">
+        </a>
 
-                    <div class="flex items-center space-x-2.5">
 
-                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-emerald-100/70 text-emerald-600 flex items-center justify-center text-sm sm:text-base shrink-0">
-                            <i class="fa-solid fa-chart-column"></i>
-                        </div>
+        <!-- 李启元 -->
+        <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_9IQxjQ&viewId=vukaF8"
+           target="_blank"
+           class="bookmark-card rounded-lg px-2 py-2 sm:px-2.5 sm:py-2.5 flex items-center justify-between group">
 
-                        <span class="text-xs sm:text-sm font-bold text-slate-700 group-hover:text-emerald-600 transition-colors">
-                            郝林勇
-                        </span>
+            <span class="text-[11px] sm:text-xs font-medium text-slate-700 group-hover:text-emerald-600 transition-colors truncate">
+                李启元
+            </span>
 
-                    </div>
+            <i class="fa-solid fa-arrow-right text-[9px] sm:text-[10px] text-slate-400 ml-1 shrink-0 group-hover:text-emerald-600 group-hover:translate-x-0.5 transition-all"></i>
 
-                    <i class="fa-solid fa-arrow-right text-xs text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all"></i>
+        </a>
 
-                </a>
 
+        <!-- 李帆 -->
+        <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_DI0ofC&viewId=vukaF8"
+           target="_blank"
+           class="bookmark-card rounded-lg px-2 py-2 sm:px-2.5 sm:py-2.5 flex items-center justify-between group">
 
-                <!-- 03 李启元 -->
-                <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_9IQxjQ&viewId=vukaF8"
-                   target="_blank"
-                   class="bookmark-card rounded-xl p-3 sm:p-4 flex items-center justify-between group">
+            <span class="text-[11px] sm:text-xs font-medium text-slate-700 group-hover:text-emerald-600 transition-colors truncate">
+                李帆
+            </span>
 
-                    <div class="flex items-center space-x-2.5">
+            <i class="fa-solid fa-arrow-right text-[9px] sm:text-[10px] text-slate-400 ml-1 shrink-0 group-hover:text-emerald-600 group-hover:translate-x-0.5 transition-all"></i>
 
-                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-emerald-100/70 text-emerald-600 flex items-center justify-center text-sm sm:text-base shrink-0">
-                            <i class="fa-solid fa-chart-column"></i>
-                        </div>
+        </a>
 
-                        <span class="text-xs sm:text-sm font-bold text-slate-700 group-hover:text-emerald-600 transition-colors">
-                            李启元
-                        </span>
 
-                    </div>
+        <!-- 连业顺 -->
+        <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_Sxddmr&viewId=vukaF8"
+           target="_blank"
+           class="bookmark-card rounded-lg px-2 py-2 sm:px-2.5 sm:py-2.5 flex items-center justify-between group">
 
-                    <i class="fa-solid fa-arrow-right text-xs text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all"></i>
+            <span class="text-[11px] sm:text-xs font-medium text-slate-700 group-hover:text-emerald-600 transition-colors truncate">
+                连业顺
+            </span>
 
-                </a>
+            <i class="fa-solid fa-arrow-right text-[9px] sm:text-[10px] text-slate-400 ml-1 shrink-0 group-hover:text-emerald-600 group-hover:translate-x-0.5 transition-all"></i>
 
+        </a>
 
-                <!-- 04 李帆 -->
-                <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_DI0ofC&viewId=vukaF8"
-                   target="_blank"
-                   class="bookmark-card rounded-xl p-3 sm:p-4 flex items-center justify-between group">
 
-                    <div class="flex items-center space-x-2.5">
+        <!-- 任志恒 -->
+        <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_L9Phd0&viewId=vukaF8"
+           target="_blank"
+           class="bookmark-card rounded-lg px-2 py-2 sm:px-2.5 sm:py-2.5 flex items-center justify-between group">
 
-                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-emerald-100/70 text-emerald-600 flex items-center justify-center text-sm sm:text-base shrink-0">
-                            <i class="fa-solid fa-chart-column"></i>
-                        </div>
+            <span class="text-[11px] sm:text-xs font-medium text-slate-700 group-hover:text-emerald-600 transition-colors truncate">
+                任志恒
+            </span>
 
-                        <span class="text-xs sm:text-sm font-bold text-slate-700 group-hover:text-emerald-600 transition-colors">
-                            李帆
-                        </span>
+            <i class="fa-solid fa-arrow-right text-[9px] sm:text-[10px] text-slate-400 ml-1 shrink-0 group-hover:text-emerald-600 group-hover:translate-x-0.5 transition-all"></i>
 
-                    </div>
+        </a>
 
-                    <i class="fa-solid fa-arrow-right text-xs text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all"></i>
 
-                </a>
+        <!-- 王海洲 -->
+        <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_zQKiQI&viewId=vukaF8"
+           target="_blank"
+           class="bookmark-card rounded-lg px-2 py-2 sm:px-2.5 sm:py-2.5 flex items-center justify-between group">
 
+            <span class="text-[11px] sm:text-xs font-medium text-slate-700 group-hover:text-emerald-600 transition-colors truncate">
+                王海洲
+            </span>
 
-                <!-- 05 连业顺 -->
-                <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_Sxddmr&viewId=vukaF8"
-                   target="_blank"
-                   class="bookmark-card rounded-xl p-3 sm:p-4 flex items-center justify-between group">
+            <i class="fa-solid fa-arrow-right text-[9px] sm:text-[10px] text-slate-400 ml-1 shrink-0 group-hover:text-emerald-600 group-hover:translate-x-0.5 transition-all"></i>
 
-                    <div class="flex items-center space-x-2.5">
+        </a>
 
-                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-emerald-100/70 text-emerald-600 flex items-center justify-center text-sm sm:text-base shrink-0">
-                            <i class="fa-solid fa-chart-column"></i>
-                        </div>
 
-                        <span class="text-xs sm:text-sm font-bold text-slate-700 group-hover:text-emerald-600 transition-colors">
-                            连业顺
-                        </span>
+        <!-- 王皓 -->
+        <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_dnOFEJ&viewId=vukaF8"
+           target="_blank"
+           class="bookmark-card rounded-lg px-2 py-2 sm:px-2.5 sm:py-2.5 flex items-center justify-between group">
 
-                    </div>
+            <span class="text-[11px] sm:text-xs font-medium text-slate-700 group-hover:text-emerald-600 transition-colors truncate">
+                王皓
+            </span>
 
-                    <i class="fa-solid fa-arrow-right text-xs text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all"></i>
+            <i class="fa-solid fa-arrow-right text-[9px] sm:text-[10px] text-slate-400 ml-1 shrink-0 group-hover:text-emerald-600 group-hover:translate-x-0.5 transition-all"></i>
 
-                </a>
+        </a>
 
 
-                <!-- 06 任志恒 -->
-                <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_L9Phd0&viewId=vukaF8"
-                   target="_blank"
-                   class="bookmark-card rounded-xl p-3 sm:p-4 flex items-center justify-between group">
+        <!-- 魏振宇 -->
+        <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_gT4Dt9&viewId=vukaF8"
+           target="_blank"
+           class="bookmark-card rounded-lg px-2 py-2 sm:px-2.5 sm:py-2.5 flex items-center justify-between group">
 
-                    <div class="flex items-center space-x-2.5">
+            <span class="text-[11px] sm:text-xs font-medium text-slate-700 group-hover:text-emerald-600 transition-colors truncate">
+                魏振宇
+            </span>
 
-                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-emerald-100/70 text-emerald-600 flex items-center justify-center text-sm sm:text-base shrink-0">
-                            <i class="fa-solid fa-chart-column"></i>
-                        </div>
+            <i class="fa-solid fa-arrow-right text-[9px] sm:text-[10px] text-slate-400 ml-1 shrink-0 group-hover:text-emerald-600 group-hover:translate-x-0.5 transition-all"></i>
 
-                        <span class="text-xs sm:text-sm font-bold text-slate-700 group-hover:text-emerald-600 transition-colors">
-                            任志恒
-                        </span>
+        </a>
 
-                    </div>
 
-                    <i class="fa-solid fa-arrow-right text-xs text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all"></i>
+        <!-- 薛献存 -->
+        <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_p5PX8G&viewId=vukaF8"
+           target="_blank"
+           class="bookmark-card rounded-lg px-2 py-2 sm:px-2.5 sm:py-2.5 flex items-center justify-between group">
 
-                </a>
+            <span class="text-[11px] sm:text-xs font-medium text-slate-700 group-hover:text-emerald-600 transition-colors truncate">
+                薛献存
+            </span>
 
+            <i class="fa-solid fa-arrow-right text-[9px] sm:text-[10px] text-slate-400 ml-1 shrink-0 group-hover:text-emerald-600 group-hover:translate-x-0.5 transition-all"></i>
 
-                <!-- 07 王海洲 -->
-                <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_zQKiQI&viewId=vukaF8"
-                   target="_blank"
-                   class="bookmark-card rounded-xl p-3 sm:p-4 flex items-center justify-between group">
+        </a>
 
-                    <div class="flex items-center space-x-2.5">
 
-                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-emerald-100/70 text-emerald-600 flex items-center justify-center text-sm sm:text-base shrink-0">
-                            <i class="fa-solid fa-chart-column"></i>
-                        </div>
+        <!-- 徐翔宇 -->
+        <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_SQTkTJ&viewId=vukaF8"
+           target="_blank"
+           class="bookmark-card rounded-lg px-2 py-2 sm:px-2.5 sm:py-2.5 flex items-center justify-between group">
 
-                        <span class="text-xs sm:text-sm font-bold text-slate-700 group-hover:text-emerald-600 transition-colors">
-                            王海洲
-                        </span>
+            <span class="text-[11px] sm:text-xs font-medium text-slate-700 group-hover:text-emerald-600 transition-colors truncate">
+                徐翔宇
+            </span>
 
-                    </div>
+            <i class="fa-solid fa-arrow-right text-[9px] sm:text-[10px] text-slate-400 ml-1 shrink-0 group-hover:text-emerald-600 group-hover:translate-x-0.5 transition-all"></i>
 
-                    <i class="fa-solid fa-arrow-right text-xs text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all"></i>
+        </a>
 
-                </a>
 
+        <!-- 张梅哲 -->
+        <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_6o4Dd6&viewId=vukaF8"
+           target="_blank"
+           class="bookmark-card rounded-lg px-2 py-2 sm:px-2.5 sm:py-2.5 flex items-center justify-between group">
 
-                <!-- 08 王皓 -->
-                <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_dnOFEJ&viewId=vukaF8"
-                   target="_blank"
-                   class="bookmark-card rounded-xl p-3 sm:p-4 flex items-center justify-between group">
+            <span class="text-[11px] sm:text-xs font-medium text-slate-700 group-hover:text-emerald-600 transition-colors truncate">
+                张梅哲
+            </span>
 
-                    <div class="flex items-center space-x-2.5">
+            <i class="fa-solid fa-arrow-right text-[9px] sm:text-[10px] text-slate-400 ml-1 shrink-0 group-hover:text-emerald-600 group-hover:translate-x-0.5 transition-all"></i>
 
-                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-emerald-100/70 text-emerald-600 flex items-center justify-center text-sm sm:text-base shrink-0">
-                            <i class="fa-solid fa-chart-column"></i>
-                        </div>
+        </a>
 
-                        <span class="text-xs sm:text-sm font-bold text-slate-700 group-hover:text-emerald-600 transition-colors">
-                            王皓
-                        </span>
 
-                    </div>
+        <!-- 张小瑜 -->
+        <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_0RLpUi&viewId=vukaF8"
+           target="_blank"
+           class="bookmark-card rounded-lg px-2 py-2 sm:px-2.5 sm:py-2.5 flex items-center justify-between group">
 
-                    <i class="fa-solid fa-arrow-right text-xs text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all"></i>
+            <span class="text-[11px] sm:text-xs font-medium text-slate-700 group-hover:text-emerald-600 transition-colors truncate">
+                张小瑜
+            </span>
 
-                </a>
+            <i class="fa-solid fa-arrow-right text-[9px] sm:text-[10px] text-slate-400 ml-1 shrink-0 group-hover:text-emerald-600 group-hover:translate-x-0.5 transition-all"></i>
 
+        </a>
 
-                <!-- 09 魏振宇 -->
-                <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_gT4Dt9&viewId=vukaF8"
-                   target="_blank"
-                   class="bookmark-card rounded-xl p-3 sm:p-4 flex items-center justify-between group">
 
-                    <div class="flex items-center space-x-2.5">
+        <!-- 张新伟 -->
+        <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_0MQr5t&viewId=vukaF89"
+           target="_blank"
+           class="bookmark-card rounded-lg px-2 py-2 sm:px-2.5 sm:py-2.5 flex items-center justify-between group">
 
-                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-emerald-100/70 text-emerald-600 flex items-center justify-center text-sm sm:text-base shrink-0">
-                            <i class="fa-solid fa-chart-column"></i>
-                        </div>
+            <span class="text-[11px] sm:text-xs font-medium text-slate-700 group-hover:text-emerald-600 transition-colors truncate">
+                张新伟
+            </span>
 
-                        <span class="text-xs sm:text-sm font-bold text-slate-700 group-hover:text-emerald-600 transition-colors">
-                            魏振宇
-                        </span>
+            <i class="fa-solid fa-arrow-right text-[9px] sm:text-[10px] text-slate-400 ml-1 shrink-0 group-hover:text-emerald-600 group-hover:translate-x-0.5 transition-all"></i>
 
-                    </div>
+        </a>
 
-                    <i class="fa-solid fa-arrow-right text-xs text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all"></i>
 
-                </a>
+        <!-- 张裕 -->
+        <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_b3nUB9&viewId=vukaF8"
+           target="_blank"
+           class="bookmark-card rounded-lg px-2 py-2 sm:px-2.5 sm:py-2.5 flex items-center justify-between group">
 
+            <span class="text-[11px] sm:text-xs font-medium text-slate-700 group-hover:text-emerald-600 transition-colors truncate">
+                张裕
+            </span>
 
-                <!-- 10 薛献存 -->
-                <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_p5PX8G&viewId=vukaF8"
-                   target="_blank"
-                   class="bookmark-card rounded-xl p-3 sm:p-4 flex items-center justify-between group">
+            <i class="fa-solid fa-arrow-right text-[9px] sm:text-[10px] text-slate-400 ml-1 shrink-0 group-hover:text-emerald-600 group-hover:translate-x-0.5 transition-all"></i>
 
-                    <div class="flex items-center space-x-2.5">
+        </a>
 
-                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-emerald-100/70 text-emerald-600 flex items-center justify-center text-sm sm:text-base shrink-0">
-                            <i class="fa-solid fa-chart-column"></i>
-                        </div>
 
-                        <span class="text-xs sm:text-sm font-bold text-slate-700 group-hover:text-emerald-600 transition-colors">
-                            薛献存
-                        </span>
+        <!-- 朱冠企 -->
+        <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_Zsrqsy&viewId=vukaF8"
+           target="_blank"
+           class="bookmark-card rounded-lg px-2 py-2 sm:px-2.5 sm:py-2.5 flex items-center justify-between group">
 
-                    </div>
+            <span class="text-[11px] sm:text-xs font-medium text-slate-700 group-hover:text-emerald-600 transition-colors truncate">
+                朱冠企
+            </span>
 
-                    <i class="fa-solid fa-arrow-right text-xs text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all"></i>
+            <i class="fa-solid fa-arrow-right text-[9px] sm:text-[10px] text-slate-400 ml-1 shrink-0 group-hover:text-emerald-600 group-hover:translate-x-0.5 transition-all"></i>
 
-                </a>
+        </a>
 
+    </div>
+</section>
+```
 
-                <!-- 11 徐翔宇 -->
-                <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_SQTkTJ&viewId=vukaF8"
-                   target="_blank"
-                   class="bookmark-card rounded-xl p-3 sm:p-4 flex items-center justify-between group">
-
-                    <div class="flex items-center space-x-2.5">
-
-                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-emerald-100/70 text-emerald-600 flex items-center justify-center text-sm sm:text-base shrink-0">
-                            <i class="fa-solid fa-chart-column"></i>
-                        </div>
-
-                        <span class="text-xs sm:text-sm font-bold text-slate-700 group-hover:text-emerald-600 transition-colors">
-                            徐翔宇
-                        </span>
-
-                    </div>
-
-                    <i class="fa-solid fa-arrow-right text-xs text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all"></i>
-
-                </a>
-
-
-                <!-- 12 张梅哲 -->
-                <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_6o4Dd6&viewId=vukaF8"
-                   target="_blank"
-                   class="bookmark-card rounded-xl p-3 sm:p-4 flex items-center justify-between group">
-
-                    <div class="flex items-center space-x-2.5">
-
-                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-emerald-100/70 text-emerald-600 flex items-center justify-center text-sm sm:text-base shrink-0">
-                            <i class="fa-solid fa-chart-column"></i>
-                        </div>
-
-                        <span class="text-xs sm:text-sm font-bold text-slate-700 group-hover:text-emerald-600 transition-colors">
-                            张梅哲
-                        </span>
-
-                    </div>
-
-                    <i class="fa-solid fa-arrow-right text-xs text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all"></i>
-
-                </a>
-
-
-                <!-- 13 张小瑜 -->
-                <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_0RLpUi&viewId=vukaF8"
-                   target="_blank"
-                   class="bookmark-card rounded-xl p-3 sm:p-4 flex items-center justify-between group">
-
-                    <div class="flex items-center space-x-2.5">
-
-                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-emerald-100/70 text-emerald-600 flex items-center justify-center text-sm sm:text-base shrink-0">
-                            <i class="fa-solid fa-chart-column"></i>
-                        </div>
-
-                        <span class="text-xs sm:text-sm font-bold text-slate-700 group-hover:text-emerald-600 transition-colors">
-                            张小瑜
-                        </span>
-
-                    </div>
-
-                    <i class="fa-solid fa-arrow-right text-xs text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all"></i>
-
-                </a>
-
-
-                <!-- 14 张新伟 -->
-                <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_0MQr5t&viewId=vukaF89"
-                   target="_blank"
-                   class="bookmark-card rounded-xl p-3 sm:p-4 flex items-center justify-between group">
-
-                    <div class="flex items-center space-x-2.5">
-
-                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-emerald-100/70 text-emerald-600 flex items-center justify-center text-sm sm:text-base shrink-0">
-                            <i class="fa-solid fa-chart-column"></i>
-                        </div>
-
-                        <span class="text-xs sm:text-sm font-bold text-slate-700 group-hover:text-emerald-600 transition-colors">
-                            张新伟
-                        </span>
-
-                    </div>
-
-                    <i class="fa-solid fa-arrow-right text-xs text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all"></i>
-
-                </a>
-
-
-                <!-- 15 张裕 -->
-                <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_b3nUB9&viewId=vukaF8"
-                   target="_blank"
-                   class="bookmark-card rounded-xl p-3 sm:p-4 flex items-center justify-between group">
-
-                    <div class="flex items-center space-x-2.5">
-
-                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-emerald-100/70 text-emerald-600 flex items-center justify-center text-sm sm:text-base shrink-0">
-                            <i class="fa-solid fa-chart-column"></i>
-                        </div>
-
-                        <span class="text-xs sm:text-sm font-bold text-slate-700 group-hover:text-emerald-600 transition-colors">
-                            张裕
-                        </span>
-
-                    </div>
-
-                    <i class="fa-solid fa-arrow-right text-xs text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all"></i>
-
-                </a>
-
-
-                <!-- 16 朱冠企 -->
-                <a href="https://doc.weixin.qq.com/smartsheet/s3_AbAAVwb3AHMCN6wpN2EOETri3t9U7?scode=ABIAWwfrAHIF37O5r9AbAAVwb3AHM&version=5.0.10.6023&platform=win&tab=db_Zsrqsy&viewId=vukaF8"
-                   target="_blank"
-                   class="bookmark-card rounded-xl p-3 sm:p-4 flex items-center justify-between group">
-
-                    <div class="flex items-center space-x-2.5">
-
-                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-emerald-100/70 text-emerald-600 flex items-center justify-center text-sm sm:text-base shrink-0">
-                            <i class="fa-solid fa-chart-column"></i>
-                        </div>
-
-                        <span class="text-xs sm:text-sm font-bold text-slate-700 group-hover:text-emerald-600 transition-colors">
-                            朱冠企
-                        </span>
-
-                    </div>
-
-                    <i class="fa-solid fa-arrow-right text-xs text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-1 transition-all"></i>
-
-                </a>
-
-            </div>
-        </section>
 
     </main>
 
